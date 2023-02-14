@@ -8,33 +8,29 @@
 
 <body>
 	<!-- the entire body must be written by student -->
+            
 	<div class="calculator">
-  <input type="text" id="input" disabled>
-  <br><br>
-  <button id="block7">7</button>
-  <button id="block8">8</button>
-  <button id="block9">9</button>
-  <button id="divide">/</button>
-  <br>
-  <button id="block4">4</button>
-  <button id="block5">5</button>
-  <button id="block6">6</button>
-  <button id="multiply">*</button>
-  <br>
-  <button id="block1">1</button>
-  <button id="block2">2</button>
-  <button id="block3">3</button>
-  <button id="minus">-</button>
-  <br>
-  <button id="dot">.</button>
-  <button id="block0">0</button>
-  <button id="ans">=</button>
-  <button id="plus">+</button>
-  <br>
-  <button id="clr">C</button>
-</div>
-
-    
+      <div id="input">0</div>
+		 <div class="calculator__keys">
+	<button data-num="7">7</button>
+        <button data-num="8>8</button>
+        <button data-num="9">9</button>
+        <button data-num="-4>4</button>
+        <button data-num="5">5</button>
+        <button data-num="6">6</button>
+        <button data-num="1">1</button>
+        <button data-num="2">2</button>
+        <button data-num="3">3</button>
+        <button data-num="0">0</button>
+        <button id="plus" data-num="+" class="key--operator>+</button>
+        <button id="minus" data-num="-" class="key--operator>-</button>
+        <button id="multiply" data-num="*" class="key--operator>&times;</button>
+        <button id="divide" data-num="/" class="key--operator>÷</button>      <button data-num="." id="dot">.</button>
+        <button data-action="clear" id="clr">AC</button>
+        <button id="ans" data-action="calculate">ans</button>
+         
+	</div>
+	</div>
     <script type="text/javascript" src="./script.js">
 </script>
 
