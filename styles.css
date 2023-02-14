@@ -1,2 +1,20 @@
 
 /* Your CSS Code here. */
+.calculator {
+  text-align: center;
+  font-family: Arial;
+}
+
+input[type="text"] {
+  width: 200px;
+  height: 40px;
+  font-size: 20px;
+  text-align: right;
+}
+
+button {
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  margin: 5px;
+}
