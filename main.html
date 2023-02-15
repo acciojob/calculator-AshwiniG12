@@ -3,36 +3,136 @@
 <html>
 
 <head>
-	<link rel="stylesheet" href="styles.css">
+	
+<style>
+	*{  
+		margin: 0;  
+		padding: 0;  
+	}
+
+	.formstyle{
+		width: 300px;
+		height: 330px;
+		background-color: grey;
+		text-align: center;
+		margin: 20px auto;
+		border: 3px solid skyblue;
+		border-radius: 5px;
+		padding: 20;
+	}
+
+	h1 {  
+    	text-align: center;  
+    	padding: 23px;  
+    	background-color: skyblue;  
+    	color: white;  
+    }  
+
+	input:hover{  
+		background-color: green;  
+	}
+
+	.btn{
+		width: 50px;
+		height: 50px;
+		font-size: 18px;
+		margin: 2px;
+		cursor: pointer;
+		background-color: red;  
+        color: white; 
+		
+		
+	}
+
+	.textview{
+		width: 223px;
+		margin: 5px;
+		font-size: 18px;
+		padding: 5px;
+		background-color: lightgreen;
+	}
+
+
+	</style>
 </head>
 
 <body>
 	<!-- the entire body must be written by student -->
-            
-	<div class="calculator">
-      <div id="input">0</div>
-		 <div class="calculator__keys">
-	<button data-num="7">7</button>
-        <button data-num="8>8</button>
-        <button data-num="9">9</button>
-        <button data-num="-4>4</button>
-        <button data-num="5">5</button>
-        <button data-num="6">6</button>
-        <button data-num="1">1</button>
-        <button data-num="2">2</button>
-        <button data-num="3">3</button>
-        <button data-num="0">0</button>
-        <button id="plus" data-num="+" class="key--operator>+</button>
-        <button id="minus" data-num="-" class="key--operator>-</button>
-        <button id="multiply" data-num="*" class="key--operator>&times;</button>
-        <button id="divide" data-num="/" class="key--operator>÷</button>      <button data-num="." id="dot">.</button>
-        <button data-action="clear" id="clr">AC</button>
-        <button id="ans" data-action="calculate">ans</button>
-         
+
+	<h1>Calculator Program</h1>
+	<div class="formstyle">
+		<form name="form1">
+			<input class="textview" id="input" name="textview" type="text">
+		</form>
+		<center>
+		<table >
+			<tr>
+				<td><input class="btn" id="clr" type="button" value="C" onclick="form1.textview.value = ''"  > </td>
+				<td><input class="btn" type="button" value="B" onclick="backspace()" ></td>
+				<td><input class="btn" id="divide" type="button" value="/" onclick="insert('/')" ></td>
+				<td><input class="btn" id="multiply" type="button" value = "x" onclick = "insert('*')" ></td>
+			</tr>
+
+			<tr>
+				<td> <input class = "btn" id="block7" type = "button" value = "7" onclick = "insert(7)" > </td>  
+   				<td> <input class = "btn" id="block8" type = "button" value = "8" onclick = "insert(8)" > </td>  
+    			<td> <input class = "btn" id="block9" type = "button" value = "9" onclick = "insert(9)" > </td>  
+    			<td> <input class = "btn" id="minus" type = "button" value = "-" onclick = "insert('-')" > </td> 
+			</tr>
+
+			<tr>   
+				<td> <input class = "btn" id="block4" type = "button" value = "4" onclick = "insert(4)" > </td>  
+				<td> <input class = "btn" id="block5" type = "button" value = "5" onclick = "insert(5)" > </td>  
+				<td> <input class = "btn" id="block6" type = "button" value = "6" onclick = "insert(6)" > </td>  
+				<td> <input class = "btn" id="plus" type = "button" value = "+" onclick = "insert('+')" > </td>  
+			</tr>
+				
+			<tr>   
+				<td> <input class = "btn" id="block1" type = "button" value = "1" onclick = "insert(1)" > </td>  
+				<td> <input class = "btn" id="block2" type = "button" value = "2" onclick = "insert(2)" > </td>  
+				<td> <input class = "btn" id="block3" type = "button" value = "3" onclick = "insert(3)" > </td>  
+				<td rowspan = 5> <input class = "btn" id="ans" style = "height: 110px" type = "button" value = "=" onclick = "equal()"> </td>  
+			</tr>
+			
+			<tr>  
+				<td colspan = 2> <input class = "btn" style = "width: 106px" type = "button" value = "0" onclick = "insert(0)" > </td>  
+				<td> <input class = "btn" id="dot" type = "button" value = "." onclick = "insert('.')"> </td>  
+			</tr>
+		</table>
+	</center>
 	</div>
-	</div>
-    <script type="text/javascript" src="./script.js">
-</script>
+
+    <!-- <script type="text/javascript" src="./script.js"></script> -->
+	<script>
+		//insert() function to insert the number in textview.
+		//document.form1.textview.value = num;   if use only num it will right only one number more 1 number will not add there
+		//to write multiple numbers we right.    document.form1.textview.value = document.form1.textview.value + num; 
+		function insert(num){
+			document.form1.textview.value = document.form1.textview.value + num; 
+		}
+
+		 
+		//Here, we create a backspace() function to remove the number at the end of the numeric series in textview.  
+
+		function backspace(){
+			let back = document.form1.textview.value;
+			/* remove the element from total length. then - 1 */
+			document.form1.textview.value = back.substring(0, back.length-1); 
+		}
+
+
+
+		// Use equal() function to return the result based on passed values.
+		function equal(){
+			let calculation = document.form1.textview.value;
+			if(calculation){
+				document.form1.textview.value = eval(calculation);
+			}
+		}
+		
+
+
+	</script>
 
 </body>
 
