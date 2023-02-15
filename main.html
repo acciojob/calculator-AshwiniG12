@@ -4,56 +4,7 @@
 
 <head>
 	
-<style>
-	*{  
-		margin: 0;  
-		padding: 0;  
-	}
 
-	.formstyle{
-		width: 300px;
-		height: 330px;
-		background-color: grey;
-		text-align: center;
-		margin: 20px auto;
-		border: 3px solid skyblue;
-		border-radius: 5px;
-		padding: 20;
-	}
-
-	h1 {  
-    	text-align: center;  
-    	padding: 23px;  
-    	background-color: skyblue;  
-    	color: white;  
-    }  
-
-	input:hover{  
-		background-color: green;  
-	}
-
-	.btn{
-		width: 50px;
-		height: 50px;
-		font-size: 18px;
-		margin: 2px;
-		cursor: pointer;
-		background-color: red;  
-        color: white; 
-		
-		
-	}
-
-	.textview{
-		width: 223px;
-		margin: 5px;
-		font-size: 18px;
-		padding: 5px;
-		background-color: lightgreen;
-	}
-
-
-	</style>
 </head>
 
 <body>
@@ -102,38 +53,8 @@
 	</center>
 	</div>
 
-    <!-- <script type="text/javascript" src="./script.js"></script> -->
-	<script>
-		//insert() function to insert the number in textview.
-		//document.form1.textview.value = num;   if use only num it will right only one number more 1 number will not add there
-		//to write multiple numbers we right.    document.form1.textview.value = document.form1.textview.value + num; 
-		function insert(num){
-			document.form1.textview.value = document.form1.textview.value + num; 
-		}
-
-		 
-		//Here, we create a backspace() function to remove the number at the end of the numeric series in textview.  
-
-		function backspace(){
-			let back = document.form1.textview.value;
-			/* remove the element from total length. then - 1 */
-			document.form1.textview.value = back.substring(0, back.length-1); 
-		}
-
-
-
-		// Use equal() function to return the result based on passed values.
-		function equal(){
-			let calculation = document.form1.textview.value;
-			if(calculation){
-				document.form1.textview.value = eval(calculation);
-			}
-		}
-		
-
-
-	</script>
-
+    <script type="text/javascript" src="./script.js"></script> -->
+	
 </body>
 
 </html>
